@@ -1,1 +1,4 @@
 headless-wp/wp-config.php
+headless-wp/.htaccess
+
+headless-gatsby/node_modules
