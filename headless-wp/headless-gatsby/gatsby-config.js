@@ -33,7 +33,7 @@ module.exports = {
       options: {
         // your wordpress source
         baseUrl: `headless-wp.lndo.site`,
-        protocol: `httpsSS`,
+        protocol: `http`,
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
