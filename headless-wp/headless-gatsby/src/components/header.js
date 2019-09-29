@@ -1,8 +1,9 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Menu from "./menu"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, data }) => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -27,6 +28,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <Menu menu={data}/>
     </div>
   </header>
 )
@@ -40,3 +42,21 @@ Header.defaultProps = {
 }
 
 export default Header
+
+export const query = graphql`
+  query HeaderQuery {
+      allWordpressWpApiMenusMenusItems{
+            edges{
+                node{
+                    id
+                    name
+                    items{
+                        title
+                        url
+                        object_slug
+                    }
+                }
+            }
+        }
+  }
+`
